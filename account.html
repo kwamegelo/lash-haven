@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lash Haven - Login</title>
+    <script>
+        // User Registration
+        document.getElementById("registerBtn")?.addEventListener("click", () => {
+            const email = document.getElementById("regEmail").value;
+            const password = document.getElementById("regPassword").value;
+    
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    alert("Account created!");
+                    window.location.href = "login.html";
+                })
+                .catch((error) => alert(error.message));
+        });
+    
+        // User Login
+        document.getElementById("loginBtn")?.addEventListener("click", () => {
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+    
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    localStorage.setItem("user", JSON.stringify(userCredential.user));
+                    window.location.href = "account.html";
+                })
+                .catch((error) => alert(error.message));
+        });
+    
+        // Google Sign-In
+        document.getElementById("googleSignIn")?.addEventListener("click", () => {
+            const provider = new GoogleAuthProvider();
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    localStorage.setItem("user", JSON.stringify(result.user));
+                    window.location.href = "account.html";
+                })
+                .catch((error) => alert(error.message));
+        });
+    
+        // Logout
+        document.getElementById("logoutBtn")?.addEventListener("click", () => {
+            signOut(auth).then(() => {
+                localStorage.removeItem("user");
+                window.location.href = "login.html";
+            });
+        });
+    
+        // Check Auth State
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                document.getElementById("welcomeMsg")?.innerText = `Welcome, ${user.email}`;
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="accountcss.css">
+</head>
+<body>
+    
+        
+    
+
+    <!-- Landing Page -->
+    <div class="container" id="landingPage">
+        <h1>Welcome to Lash Haven</h1>
+        <p>Experience beauty like never before.</p>
+        <button onclick="showLogin()">Log In</button>
+        <button onclick="showSignup()">Create an Account</button>
+    </div>
+
+    <!-- Login Page -->
+    <div class="container hidden" id="loginPage">
+        <h2>Login to Lash Haven</h2>
+        <div class="input-group">
+            <input type="text" id="loginEmail" required placeholder=" ">
+            <label for="loginEmail">Email</label>
+        </div>
+        <div class="input-group">
+            <input type="password" id="loginPassword" required placeholder=" ">
+            <label for="loginPassword">Password</label>
+        </div>
+        <button>Login</button>
+        <a href="#" onclick="showLanding()">Back</a>
+    </div>
+
+    <!-- Sign Up Page -->
+    <div class="container hidden" id="signupPage">
+        <h2>Create an Account</h2>
+        <div class="input-group">
+            <input type="text" id="signupEmail" required placeholder=" ">
+            <label for="signupEmail">Email</label>
+        </div>
+        <div class="input-group">
+            <input type="password" id="signupPassword" required placeholder=" ">
+            <label for="signupPassword">Password</label>
+        </div>
+        <button>Sign Up</button>
+        <button class="google-btn">Sign Up with Google</button>
+        <a href="#" onclick="showLanding()">Back</a>
+    </div>
+
+    <script src="account.js"></script>
+</body>
+</html>

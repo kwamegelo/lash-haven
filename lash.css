@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    transition: 0.5s;
+    border-radius:30px;
+    
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navigation */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #d81b60;
+}
+
+/* Call to Action Buttons */
+.cta-buttons .btn {
+    padding: 10px 15px;
+    background: #d81b60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cta-buttons .btn:hover {
+    background: #b7154b;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* User Authentication */
+.user-auth .btn {
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.user-auth .btn:hover {
+    background: #555;
+}
+
+/* Social Icons */
+.social-icons a {
+    color: black;
+    margin: 0 5px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #d81b60;
+}
+
+/* Mobile Menu */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links, .search-bar, .cta-buttons, .user-auth, .social-icons {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+/* Slider container takes full width */
+.slider-container {
+    position: relative;
+    width: 100vw; /* Full viewport width */
+    height: 500px; /* Fixed height for uniformity */
+    overflow: hidden;
+}
+
+/* Slider track for animation */
+.slider {
+    display: flex;
+    width: 500%; /* Matches the number of slides */
+    animation: slideAnimation 30s infinite linear; /* Slower transition */
+}
+
+/* Individual slides */
+.slide {
+    width: 100vw; /* Full viewport width */
+    height: 100vh;
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* Ensure images fully cover the width while maintaining aspect ratio */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Covers full width without stretching */
+    transition: transform 1s ease-in-out;
+}
+
+/* Subtle zoom effect on hover */
+.slide:hover img {
+    transform: scale(1.03);
+}
+
+/* Text overlay with glassmorphism effect */
+.text-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth sliding animation */
+@keyframes slideAnimation {
+    0% { transform: translateX(0%); }
+    25% { transform: translateX(-100vw); }
+    50% { transform: translateX(-200vw); }
+    75% { transform: translateX(-300vw); }
+    100% { transform: translateX(-400vw); }
+}
+
+/* Dots for navigation */
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #fff;
+}
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #ff4f9a;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e04389;
+    transform: scale(1.05);
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+}
+
+.service-container, .product-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service, .product {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #ff4f9a;
+    text-decoration: none;
+}
+
+/* Live Chat */
+.chat-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff4f9a;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+    /* Default Desktop Styles - Already in Your CSS */
+
+/* Tablet Screens */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 30px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .cta-buttons .btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    .nav-links {
+        display: none; /* Hide normal menu */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        background: white;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.show {
+        display: flex; /* Show when menu is opened */
+    }
+
+    .nav-links li {
+        padding: 10px;
+    }
+
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+   
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .brand-name {
+        font-size: 1.2rem;
+    }
+    .cta-buttons .btn {
+        font-size: 0.8rem;
+        padding: 7px 10px;
+    }
+}
+
+
+
+/*header*/
+

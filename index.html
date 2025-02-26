@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lash Haven - Lash By Brenda</title>
+    <link rel="stylesheet" href="lash.css">
+</head>
+<body>
+    <header class="mobile-header">
+    <button class="menu-btn" id="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <div class="logo">Lash Haven</div>
+
+    <button class="three-dots" id="three-dots">
+        &#x22EE;
+    </button>
+</header>
+
+<!-- Sidebar Navigation -->
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="lashbooking.html">Bookings</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="lash6.jpg" alt="Lash Service 1">
+                <div class="text-overlay">Luxury Lashes for Every Occasion</div>
+            </div>
+            <div class="slide">
+                <img src="lash5.jpg" alt="Lash Service 2">
+                <div class="text-overlay">Enhance Your Natural Beauty</div>
+            </div>
+            <div class="slide">
+                <img src="lash4.jpg" alt="Lash Service 3">
+                <div class="text-overlay">Longer, Fuller, Stunning Lashes</div>
+            </div>
+            <div class="slide">
+                <img src="lash haven.jpg" alt="Lash Service 4">
+                <div class="text-overlay">Book Your Appointment Today</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <!-- Featured Services -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service">
+                <img src="images/classic-lashes.jpg" alt="Classic Lashes">
+                <h3>Classic Lash Extensions</h3>
+                <p>Natural, elegant, and timeless lash extensions.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="service">
+                <img src="images/volume-lashes.jpg" alt="Volume Lashes">
+                <h3>Volume Lashes</h3>
+                <p>Fluffy, full-volume lashes for a dramatic look.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="service">
+                <img src="images/lash-lift.jpg" alt="Lash Lift">
+                <h3>Lash Lift & Tint</h3>
+                <p>Enhance your natural lashes with a lift & tint.</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="reviews">
+        <h2>What Our Clients Say</h2>
+        <div class="review-slider">
+            <div class="review active">
+                <p>“Absolutely love my new lashes! Best experience ever.”</p>
+                <span>- Emily R.</span>
+            </div>
+            <div class="review">
+                <p>“Professional and amazing quality. Highly recommend.”</p>
+                <span>- Sarah L.</span>
+            </div>
+            <div class="review">
+                <p>“My lashes look stunning and natural! Will be back.”</p>
+                <span>- Jessica M.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking -->
+    <section class="booking">
+        <h2>Book Your Appointment</h2>
+        <p>Choose your preferred service and time.</p>
+        <button onclick="goToBooking()">Book Now</button>
+    </section>
+
+    <!-- Online Store Preview -->
+    <section class="shop">
+        <h2>Shop Beauty Products</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="images/lash-serum.jpg" alt="Lash Serum">
+                <h3>Nourishing Lash Serum</h3>
+                <p>Strengthen and grow your lashes.</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="product">
+                <img src="images/lash-cleanser.jpg" alt="Lash Cleanser">
+                <h3>Gentle Lash Cleanser</h3>
+                <p>Keep your lashes clean and fresh.</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="socials">
+        <h2>Follow Us</h2>
+        <p>Stay connected for the latest beauty trends.</p>
+        <div class="social-links">
+            <a href="https://l.instagram">Snapchat</a>
+            <a href="httpd://wa.me/+233591529491">Whatsapp</a>
+        </div>
+    </section>
+
+    <!-- About & Contact -->
+    <footer class="footer">
+        <h2>About Lash Haven</h2>
+        <p>We specialize in high-quality eyelash extensions, lifts, and beauty products.</p>
+        <p><strong>Location:</strong> UPSA HOSTEL, Accra-IPS road</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/+233591529491">Chat with us</a></p>
+    </footer>
+
+</body>
+    <script>
+        let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function changeSlide() {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+}
+
+setInterval(changeSlide, 4000);
+
+function goToBooking() {
+    window.location.href = "booking.html";
+}
+
+function goToShop() {
+    window.location.href = "shop.html";
+}
+// Mobile Menu Toggle
+document.querySelector(".hamburger").addEventListener("click", function() {
+  document.querySelector(".nav-links").classList.toggle("show");
+});
+
+    </script>
+</html>

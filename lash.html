@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lash Haven - Premium Eyelash Extensions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Lash Haven Logo" class="logo">
+        </div>
+        <h1>Lash Haven</h1>
+        <p>Luxury Lashes for Every Occasion</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="lashes.html">Lash Types</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="booking.html">Book Appointment</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-icon"><a href="cart.html">🛒</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="greeting">
+        <h2>Welcome, <span id="username">Guest</span>!</h2>
+        <p>Sign in or continue as a guest to explore Lash Haven.</p>
+    </section>
+    <section class="hero">
+        <h2>Enhance Your Beauty with Lash Haven</h2>
+        <p>Discover the finest eyelash extensions, tailored for elegance.</p>
+        <a href="shop.html" class="btn">Shop Now</a>
+    </section>
+    <div class="container">
+        <h2>Our Bestsellers</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="lash-glue.jpg" alt="Lash Glue">
+                <h3>Premium Lash Glue</h3>
+                <p>$12.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="mink-lashes.jpg" alt="Mink Lashes">
+                <h3>Silk Mink Lashes</h3>
+                <p>$19.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="lash-kit.jpg" alt="Lash Kit">
+                <h3>Full Lash Kit</h3>
+                <p>$29.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <section class="booking">
+        <h2>Book an Appointment</h2>
+        <form action="book.php" method="POST">
+            <label for="appointment-type">Select Appointment Type:</label>
+            <select id="appointment-type" name="appointment-type">
+                <option value="classic">Classic Lash Extensions - 1 Hour</option>
+                <option value="volume">Volume Lash Extensions - 1.5 Hours</option>
+                <option value="hybrid">Hybrid Lash Extensions - 2 Hours</option>
+            </select>
+            <label for="date">Choose Date:</label>
+            <input type="date" id="date" name="date" required>
+            <button type="submit">Book Now</button>
+        </form>
+    </section>
+    <footer>
+        <div class="footer-info">
+            <p>&copy; 2025 Lash Haven. All rights reserved.</p>
+            <p>Follow us on:
+                <a href="#">Instagram</a> |
+                <a href="#">Facebook</a> |
+                <a href="#">Twitter</a>
+            </p>
+            <p><a href="contact.html">Contact Us</a> | <a href="about.html">About Us</a></p>
+        </div>
+    </footer>
+</body>
+</html>
